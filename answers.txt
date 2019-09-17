@@ -1,4 +1,54 @@
 • What is a gitignore file and what should it include for a Java project?
+The .gitignore file is a text file that tells Git which files or folders to ignore in a project.
+A local .gitignore file is usually placed in the root directory of a project. You can also create a global .gitignore file and any entries in that file will be ignored in all of your Git repositories.
+To create a local .gitignore file, create a text file and name it .gitignore (remember to include the . at the beginning). Then edit this file as needed. Each new line should list an additional file or folder that you want Git to ignore.
+
+The entries in this file can also follow a matching pattern.
+
+* is used as a wildcard match
+/ is used to ignore pathnames relative to the .gitignore file
+# is used to add comments to a .gitignore file
+
+Java project related gitignore will look like this
+
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
 • What does fast-forward in Git mean?
+Git does a fast forward when you merge a branch that is ahead of your checked-out branch.Let say you have created 
+a new branch(Development Branch) from the master branch.Then you have made changes to the development branch.Now you
+want to merge the changes to the master branch.As the development branch is one commit ahead of the master branch.
+Since master hasn't diverged from the development branch, integrating the changes can be as simple 
+as moving the master pointer to the latest commit in development.
+
 • Why should you have different branches?
+We should have different branches as we can work parallely on the different tasks or user stories for a given project.
+To make sure that the working software is never effected by the new changes done.
+
 • In a project how many remote Git repositories do you usually have?
+You can have as many remotes as you want, but you can only have one remote named "origin". 
+The remote Origin is  default remote created by Git when you clone an existing repository. 
+You can configure a second remote, push to/pull from that remote, 
+and setup some branches to track branches from that remote instead of origin.
+
